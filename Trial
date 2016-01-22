@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+use strict;
+use Time::localtime;
+use Sys::Hostname;
+use IO::Handle;
+use Data::Dumper;
+
+my $retval = time() - 86400;
+my $local_time = gmtime( $retval );
+my @month = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+my ($sec,$min,$hour,$mday,$month,$year,$wday,$yday,$isdst) = gmtime(time-86400);
+
+#print $retval."\n";
+#print gmtime(time-86400). "\n";
+print "$mday : $month : $year\n";
